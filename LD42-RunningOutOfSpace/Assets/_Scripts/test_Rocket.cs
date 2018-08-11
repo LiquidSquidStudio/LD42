@@ -130,29 +130,21 @@ public class test_Rocket : MonoBehaviour {
 	// Update the physics
 	void FixedUpdate()
 	{
-
-		// Apply gravity
-		// calculate the distance
-		float distance = (planet.transform.position - transform.position).sqrMagnitude;
-
-		// Apply a current force towards the planet f = mv/r^2
+        // Apply gravity (F = mv/r^2)
+        float distance = (planet.transform.position - transform.position).sqrMagnitude;
 		rb.AddForce ((planet.transform.position - transform.position).normalized * planet.gravity * mass / distance);
 
-		// Apply the current drag factor
-		rb.velocity -= rb.velocity*dragFactor*Time.deltaTime;
+        // Apply the current drag factor -- why?
+        rb.velocity -= rb.velocity * dragFactor * Time.deltaTime;
 
-
-		// Apply Turning Torque
+		// Apply Torques
 		rb.AddTorque(turning);
-
-		// Apply Rocket Torque
 		rb.AddForce (thrust * transform.up);
-
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-
+        // TO DO - Trigger end condition or maybe just trigger losing a life or something
 	}
 
 }

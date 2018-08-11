@@ -12,6 +12,8 @@ public class LaunchPad : MonoBehaviour {
     public float launchVelocity;
     public float launchAngle;
 
+
+
 	// Use this for initialization
 	void Start ()
     {
@@ -32,9 +34,19 @@ public class LaunchPad : MonoBehaviour {
 
     }
 
+    void LaunchRocket(float angle, float velocity)
+    {
+
+    }
+
     // Update is called once per frame
     void Update ()
     {
+        if (Input.GetButtonDown("Jump"))
+        {
+            LaunchRocket(launchAngle, launchVelocity);
+        }
+
         PointRocket();
 	}
 }
