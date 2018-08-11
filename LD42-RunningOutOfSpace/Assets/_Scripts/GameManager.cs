@@ -99,4 +99,8 @@ public class GameManager : MonoBehaviour {
 
 	}
 		
+    void AddSatellites()
+    {
+
+    }
 }

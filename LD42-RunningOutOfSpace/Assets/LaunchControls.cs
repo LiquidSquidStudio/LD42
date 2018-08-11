@@ -15,17 +15,17 @@ public class LaunchControls : MonoBehaviour {
     private void Update()
     {
 
-        // Check if the thruster is on 
-        var emitter = booster.emission;
-        if (thrust > 0.0f)
-        {
-            emitter.enabled = true;
+        //// Check if the thruster is on 
+        //var emitter = booster.emission;
+        //if (thrust > 0.0f)
+        //{
+        //    emitter.enabled = true;
 
-        }
-        else
-        {
-            emitter.enabled = false;
-        }
+        //}
+        //else
+        //{
+        //    emitter.enabled = false;
+        //}
     }
 
 }

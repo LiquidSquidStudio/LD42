@@ -25,14 +25,12 @@ public class LaunchPad : MonoBehaviour {
         Instantiate(rocketPrefab, transform);
     }
 
-    void PointRocket()
-    {
+    //void PointRocket()
+    //{
+    //    Vector2 aimPosition = (Vector2)Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0.0f));
 
-        Vector2 aimPosition = (Vector2)Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0.0f));
-
-        Vector2 desiredDir = aimPosition - (Vector2)transform.position;
-
-    }
+    //    Vector2 desiredDir = aimPosition - (Vector2)transform.position;
+    //}
 
     void LaunchRocket(float angle, float velocity)
     {
@@ -47,6 +45,6 @@ public class LaunchPad : MonoBehaviour {
             LaunchRocket(launchAngle, launchVelocity);
         }
 
-        PointRocket();
+        //PointRocket();
 	}
 }

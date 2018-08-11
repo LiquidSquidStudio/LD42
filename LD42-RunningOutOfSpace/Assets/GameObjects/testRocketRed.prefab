@@ -22,9 +22,11 @@ GameObject:
   - component: {fileID: 212341719173304764}
   - component: {fileID: 50600246911783142}
   - component: {fileID: 61848814075240106}
-  - component: {fileID: 114682096692884782}
+  - component: {fileID: 114908334103791386}
+  - component: {fileID: 114466707631959550}
+  - component: {fileID: 114522972083132020}
   m_Layer: 0
-  m_Name: testRocket
+  m_Name: testRocketRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +121,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21, y: 0.55}
   m_EdgeRadius: 0
---- !u!114 &114682096692884782
+--- !u!114 &114466707631959550
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,13 +129,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 1612172014619344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 287076e3d69d0b64698eda89ba39b95f, type: 3}
+  m_Script: {fileID: 11500000, guid: 73d343d3f6354824ca467848838c2d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlScheme: 1
-  turningTorque: 1
-  thrustForce: 1
-  fuel: 0
+--- !u!114 &114522972083132020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1612172014619344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acb2a1c1ff0123429b4b49d354ae368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114908334103791386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1612172014619344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5187ea019eacb294db70893e327131c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchVelocity: 0
+  launchAngle: 0
 --- !u!198 &198239196357022922
 ParticleSystem:
   m_ObjectHideFlags: 1

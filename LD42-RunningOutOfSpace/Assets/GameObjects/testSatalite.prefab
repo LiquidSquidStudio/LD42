@@ -21,12 +21,14 @@ GameObject:
   - component: {fileID: 4088966199829274}
   - component: {fileID: 212021466306815710}
   - component: {fileID: 50316988606699672}
-  - component: {fileID: 114855988426234182}
   - component: {fileID: 61306545190928826}
+  - component: {fileID: 114655598615738666}
+  - component: {fileID: 114037234423825980}
+  - component: {fileID: 114855988426234182}
   - component: {fileID: 114781679880460108}
   m_Layer: 0
   m_Name: testSatalite
-  m_TagString: Untagged
+  m_TagString: Satellite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1939603048390412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.12, y: 2.64, z: 0}
+  m_LocalPosition: {x: -1.12, y: 6.29, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +78,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.01219964, y: -0.0030499697}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -87,8 +89,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.6156007, y: 0.5485027}
   m_EdgeRadius: 0
+--- !u!114 &114037234423825980
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1939603048390412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4acb2a1c1ff0123429b4b49d354ae368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114655598615738666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1939603048390412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c0e99b51157b44b8317f3192d39880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialForce: 100
+  mass: 1
+  explosion: {fileID: 1329532568928644, guid: 8ee3f357c9d5f884b8899385bde6519a, type: 2}
 --- !u!114 &114781679880460108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,8 +141,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialForce: 50
-  mass: 1
-  explosion: {fileID: 1329532568928644, guid: 8ee3f357c9d5f884b8899385bde6519a, type: 2}
 --- !u!212 &212021466306815710
 SpriteRenderer:
   m_ObjectHideFlags: 1
