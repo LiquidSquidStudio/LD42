@@ -37,7 +37,15 @@ public class test_Satalite : MonoBehaviour {
 		rb.AddForce(forceDir.normalized * initialForce);
 
 	}
-	
+
+
+	// Update the game logic
+	void Update()
+	{
+		
+	}
+
+
 	// Update the physics
 	void FixedUpdate()
 	{
@@ -58,7 +66,7 @@ public class test_Satalite : MonoBehaviour {
 	{
 
 		// Check if it's the planet and if so destroy this Satelite (Need to make this onto a tag)
-		if (other.gameObject.name == "TestPlanet")
+		if (other.gameObject.name == "testPlanet")
 		{
 			// increase the drag
 			mass *= 3.0f;
@@ -68,6 +76,12 @@ public class test_Satalite : MonoBehaviour {
 
 		// To be completed
 		if (other.gameObject.name == "testAtmosphere")
+		{
+
+		}
+
+		// To be completed
+		if (other.gameObject.tag == "Satalite")
 		{
 
 		}
