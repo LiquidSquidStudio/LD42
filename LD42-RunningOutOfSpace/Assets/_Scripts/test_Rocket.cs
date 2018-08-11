@@ -8,6 +8,7 @@ public class test_Rocket : MonoBehaviour {
 	public enum controls {Keyboard, Mouse};
 	public controls controlScheme = controls.Keyboard;
 
+  
 
 	Rigidbody2D rb;
 
@@ -116,6 +117,7 @@ public class test_Rocket : MonoBehaviour {
 		if (thrust > 0.0f)
 		{
 			emitter.enabled = true;
+        
 		} else
 		{
 			emitter.enabled = false;
