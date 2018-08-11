@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
 		{
 		case Mode.Start:
 
-			RestGame ();
+			ResetGame ();
 			StartGame ();
 			current = Mode.Game;
 
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour {
 
 	}
 
-	void RestGame()
+	void ResetGame()
 	{
 		
 		// Reset the score
