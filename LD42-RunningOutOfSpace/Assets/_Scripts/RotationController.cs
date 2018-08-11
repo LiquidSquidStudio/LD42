@@ -1,13 +1,21 @@
 ﻿using UnityEngine;
 
-public class RandomRotation : MonoBehaviour {
+public class RotationController : MonoBehaviour {
 
     float rotationSpeed;
     public float rotationMultiplier;
+    public bool isRandom = true;
 
     private float RandRotSpeed()
     {
-        rotationSpeed = Random.value * rotationMultiplier;
+        if (isRandom)
+        {
+            rotationSpeed = Random.value * rotationMultiplier;
+        }
+        else
+        {
+            rotationSpeed = 1 * rotationMultiplier;
+        }
 
         return rotationSpeed;
     }

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212310775166009700}
   - component: {fileID: 58141037158265522}
   - component: {fileID: 114368678055711492}
+  - component: {fileID: 114044580573353554}
   m_Layer: 0
   m_Name: TestPlanet
   m_TagString: Untagged
@@ -57,6 +58,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &114044580573353554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1136063888950822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfbbe155ea3aff46916ee72ffc80dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationMultiplier: -10
+  isRandom: 0
 --- !u!114 &114368678055711492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfe4cdebd181184aaf1de917f66412a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 4
+  gravity: 6
 --- !u!212 &212310775166009700
 SpriteRenderer:
   m_ObjectHideFlags: 1
