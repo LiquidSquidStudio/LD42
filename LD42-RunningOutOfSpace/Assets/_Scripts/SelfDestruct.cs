@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 
 public class SelfDestruct : MonoBehaviour {
 
     SpriteRenderer rocketSprite;
-
-    public UnityEvent rocketDestroyed;
 
     public int childCount;
 
@@ -24,9 +21,6 @@ public class SelfDestruct : MonoBehaviour {
     void CheckIfDestroyed()
     {
         if (!rocketSprite.enabled && childCount < 3)
-        {
-            rocketDestroyed.Invoke();
             Destroy(this.gameObject);
-        }
     }
 }

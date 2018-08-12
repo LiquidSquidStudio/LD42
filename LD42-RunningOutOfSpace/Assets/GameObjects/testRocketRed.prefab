@@ -173,6 +173,11 @@ MonoBehaviour:
   - {fileID: 1151905494801292, guid: 14772eddfccddac4baf2d9edcec46bd3, type: 2}
   deceleration: 0
   velocityBump: 150
+  nextRocketPlease:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114389872554828118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,11 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f37372e7c906f845a764a9737fce950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketDestroyed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   childCount: 0
 --- !u!114 &114466707631959550
 MonoBehaviour:
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5187ea019eacb294db70893e327131c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrustForce: 2
+  thrustForce: 3
 --- !u!198 &198239196357022922
 ParticleSystem:
   m_ObjectHideFlags: 1

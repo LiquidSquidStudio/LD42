@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 public class LaunchPad : MonoBehaviour {
 
@@ -15,42 +12,46 @@ public class LaunchPad : MonoBehaviour {
     public bool isLaunchable;
 
     GameObject currentRocket;
-
+    public DetachSatellite satControl;
 
 	// Use this for initialization
-	void Start ()
+	void Awake ()
     {
         SpawnRocket();
     }
-	
+
     void SpawnRocket()
     {
         currentRocket = Instantiate(rocketPrefab, transform);
         isLaunchable = true;
 
-        // Added in an Event listener here to tell when we need another rocket because the old one is destroyed
-        var needANewRocket = currentRocket.GetComponent<SelfDestruct>().rocketDestroyed;
-        needANewRocket.RemoveListener(SpawnRocket);
-        needANewRocket.AddListener(SpawnRocket);
+        satControl = currentRocket.GetComponent<DetachSatellite>();
+        satControl.enabled = false;
     }
 
-    //void PointRocket()
-    //{
-    //    Vector2 aimPosition = (Vector2)Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0.0f));
-
-    //    Vector2 desiredDir = aimPosition - (Vector2)transform.position;
-    //}
+    void NeedANewRocket()
+    {
+        if (!isLaunchable && Input.GetButtonDown("Fire1"))
+        {
+            satControl.BlowUpRocket();
+            satControl.LaunchSatellite();
+            SpawnRocket();
+        }
+    }
 
     public void LaunchRocket(float burnTime)
     {
         LaunchControls rocketControls = currentRocket.GetComponent<LaunchControls>();
         rocketControls.LaunchRocket(burnTime);
         isLaunchable = false;
+        satControl.enabled = true;
     }
 
     // Update is called once per frame
     void Update ()
     {
+        NeedANewRocket();
+
         if (!isLaunchable)
         {
             return;
@@ -61,5 +62,12 @@ public class LaunchPad : MonoBehaviour {
         }
 
         //PointRocket();
-	}
+
+        //void PointRocket()
+        //{
+        //    Vector2 aimPosition = (Vector2)Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0.0f));
+
+        //    Vector2 desiredDir = aimPosition - (Vector2)transform.position;
+        //}
+    }
 }

@@ -1,107 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
 	// Game mode tracking
-	enum Mode { Start, Game, End };
-	Mode current = Mode.Start;
+	//enum Mode { Start, Game, End };
+	//Mode current = Mode.Start;
 
-	// Gonna need reference to the objects to spawn
-	test_Rocket player = null;
-	test_Satalite player_Controlled = null;
 
-	// Keep a track of all the active satillites to count for points
-	public List<test_Satalite> satalites = new List<test_Satalite>();
-
-	// Game Score
-	float gameScore = 0.0f;
-	int totalSatalites = 0;
+	//// Gonna need reference to the objects to spawn
+	//test_Rocket player = null;
+	//test_Satalite player_Controlled = null;
+    
 
 	// Game State tracking
 
-	// Use this for initialization
-	void Start () {
-
+	void Awake ()
+    {
 		// The game manager will persist and be reset
 		DontDestroyOnLoad(this.gameObject);
-		
 	}
 	
-	// Update is called once per frame
 	void Update () 
 	{
-
-		switch (current)
-		{
-		case Mode.Start:
-
-			ResetGame ();
-			StartGame ();
-			current = Mode.Game;
-
-			break;
-
-
-		case Mode.Game:
-
-			// Add score and spawn stuff
-		
-			break;
-
-
-		case Mode.End:
-
-			// Display Score 
-
-			break;
-		}
 		
 	}
 
+    //void GameState()
+    //{
+    //    switch (current)
+    //    {
+    //        case Mode.Start:
+    //            //ResetGame();
+    //            //StartGame();
+    //            current = Mode.Game;
 
-	void StartGame()
-	{
+    //            break;
 
-		// Spawn in the player and setup an other required conditions
+    //        case Mode.Game:
 
-	}
+    //            // Add score and spawn stuff
 
-	void ResetGame()
-	{
-		
-		// Reset the score
-		gameScore = 0.0f;
-		totalSatalites = 0;
+    //            break;
 
-		// If there is player objects ect destroy them and reset
-		if (player != null)
-		{
-			Destroy (player);
-			player = null;
-		}
+    //        case Mode.End:
 
-		if (player_Controlled != null)
-		{
-			Destroy (player_Controlled);
-			player_Controlled = null;
-		}
+    //            // Display Score 
 
-		// Destroy the remaining satillites 
-		foreach (var sat in satalites)
-		{
-			Destroy (sat);
-		}
-
-		// Clear the list
-		satalites.Clear();
-
-	}
-		
-    void AddSatellites()
-    {
-
-    }
+    //            break;
+    //    }
+    //}
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DetachSatellite : MonoBehaviour {
 
@@ -20,16 +18,7 @@ public class DetachSatellite : MonoBehaviour {
         rocket = GetComponent<SpriteRenderer>();
     }
 
-    void Update ()
-    {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            BlowUpRocket();
-            LaunchSatellite();
-        }
-	}
-
-    void BlowUpRocket()
+    public void BlowUpRocket()
     {
         Vector2 currentVelocity = rb.velocity;
 
@@ -43,7 +32,7 @@ public class DetachSatellite : MonoBehaviour {
         rocket.enabled = false;
     }
 
-    void LaunchSatellite()
+    public void LaunchSatellite()
     {
         Instantiate(satellitePrefab, spawnPoint);
     }
