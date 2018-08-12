@@ -1,16 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BoosterEffects : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [HideInInspector]
+    public bool boostersOn = false;
+    ParticleSystem exhaust;
+
+    // Get the booster particle system reference sorted, and turn it off initially
+    private void Awake()
+    {
+        exhaust = GetComponentInChildren<ParticleSystem>();
+
+        var emitter = exhaust.emission;
+        emitter.enabled = false;
+    }
+
+    private void Update()
+    {
+        var emitter = exhaust.emission;
+        emitter.enabled = boostersOn;
+    }
 }

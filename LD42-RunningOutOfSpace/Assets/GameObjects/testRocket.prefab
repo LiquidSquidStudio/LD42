@@ -25,13 +25,14 @@ GameObject:
   - component: {fileID: 114682096692884782}
   - component: {fileID: 114954422738892822}
   - component: {fileID: 114120189266633134}
+  - component: {fileID: 114775305500012578}
   m_Layer: 0
   m_Name: testRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1737744272801646
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +88,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.2
   m_GravityScale: 0
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1612172014619344}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 287076e3d69d0b64698eda89ba39b95f, type: 3}
   m_Name: 
@@ -147,6 +148,18 @@ MonoBehaviour:
   turningTorque: 1
   thrustForce: 1
   thrust: 0
+--- !u!114 &114775305500012578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1612172014619344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d343d3f6354824ca467848838c2d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boostersOn: 0
 --- !u!114 &114954422738892822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,8 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5187ea019eacb294db70893e327131c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchVelocity: 0
-  launchAngle: 0
+  thrustForce: 1
 --- !u!198 &198239196357022922
 ParticleSystem:
   m_ObjectHideFlags: 1

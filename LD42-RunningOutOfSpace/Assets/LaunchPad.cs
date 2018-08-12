@@ -9,10 +9,11 @@ public class LaunchPad : MonoBehaviour {
 
     public GameObject rocketPrefab;
 
-    public float launchVelocity;
-    public float launchAngle;
+    public int rocketBurnTime;
+    public int launchAngle;
+    public bool isLaunchable;
 
-
+    GameObject currentRocket;
 
 	// Use this for initialization
 	void Start ()
@@ -22,7 +23,8 @@ public class LaunchPad : MonoBehaviour {
 	
     void SpawnRocket()
     {
-        Instantiate(rocketPrefab, transform);
+        currentRocket = Instantiate(rocketPrefab, transform);
+        isLaunchable = true;
     }
 
     //void PointRocket()
@@ -32,17 +34,23 @@ public class LaunchPad : MonoBehaviour {
     //    Vector2 desiredDir = aimPosition - (Vector2)transform.position;
     //}
 
-    void LaunchRocket(float angle, float velocity)
+    public void LaunchRocket(float burnTime)
     {
-
+        LaunchControls rocketControls = currentRocket.GetComponent<LaunchControls>();
+        rocketControls.LaunchRocket(burnTime);
+        isLaunchable = false;
     }
 
     // Update is called once per frame
     void Update ()
     {
+        if (!isLaunchable)
+        {
+            return;
+        }
         if (Input.GetButtonDown("Jump"))
         {
-            LaunchRocket(launchAngle, launchVelocity);
+            LaunchRocket(rocketBurnTime);
         }
 
         //PointRocket();

@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4106139656206374}
-  - component: {fileID: 114258686938521028}
+  - component: {fileID: 114814340784904454}
   m_Layer: 0
   m_Name: LaunchPad
   m_TagString: Untagged
@@ -67,7 +67,7 @@ Transform:
   m_GameObject: {fileID: 1136063888950822}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 3, y: 2.8, z: 1}
   m_Children:
   - {fileID: 4106139656206374}
   m_Father: {fileID: 0}
@@ -101,7 +101,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationMultiplier: -10
   isRandom: 0
---- !u!114 &114258686938521028
+--- !u!114 &114368678055711492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1136063888950822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bfe4cdebd181184aaf1de917f66412a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 8
+--- !u!114 &114814340784904454
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,20 +126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocketPrefab: {fileID: 1612172014619344, guid: ca91053364dcd394da16df2f7d1a6793,
     type: 2}
-  launchVelocity: 5
-  launchAngle: 5
---- !u!114 &114368678055711492
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1136063888950822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bfe4cdebd181184aaf1de917f66412a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: 1
+  rocketBurnTime: 1
+  launchAngle: 0
 --- !u!212 &212310775166009700
 SpriteRenderer:
   m_ObjectHideFlags: 1

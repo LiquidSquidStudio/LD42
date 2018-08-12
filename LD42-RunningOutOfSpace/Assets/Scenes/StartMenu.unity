@@ -3463,7 +3463,8 @@ MonoBehaviour:
     in Scotland, but self-taught Unity so we''ve got plenty of ambition and zero skill.
 
 
-    Credit to: thisperson for Music, thesePeople for Graphics and thisPerson for otherthingswestole'
+    Credit to: Komiku for Music, Felix Mittermeier for his image of the night sky
+    and thisPerson for otherthingswestole'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -3540,11 +3541,11 @@ MonoBehaviour:
     lineCount: 8
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:

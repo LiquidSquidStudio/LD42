@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class TestButton : MonoBehaviour {
 
-    public AudioController aC;
+    public LaunchPad lPad;
+    public float burnTime;
 
     private void OnGUI()
     {
-        if (GUI.Button(new Rect(10, 10, 256, 30), "Go to next audio clip"))
+        if (GUI.Button(new Rect(10, 10, 256, 30), "Launch the rocket for 2 seconds"))
         {
-            aC.NextClip(1);
+            lPad.LaunchRocket(burnTime);
         }
     }
 

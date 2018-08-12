@@ -1,31 +1,62 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LaunchControls : MonoBehaviour {
 
-    [HideInInspector]
-    public float launchVelocity;
-    [HideInInspector]
-    public float launchAngle;
+    Rigidbody2D rb;
+    BoosterEffects boosterEffects;
+    
+    float timer;
+    float burnTime;
+    bool boosterIsOn = false;
 
+    float thrust;
+    public float thrustForce;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        boosterEffects = GetComponent<BoosterEffects>();
+    }
 
+    private void Start()
+    {
+        thrust = 0.5f;
+    }
+
+    public void LaunchRocket(float burnFor)
+    {
+        timer = 0f;
+        burnTime = burnFor;
+        boosterIsOn = true;
+        // TO DO - set the angle
+    }
+
+    void BoostersAreOn()
+    {
+        if (boosterIsOn)
+        {
+            thrust = thrustForce;
+        }
+        else
+        {
+            thrust = 0;
+        }
+
+        boosterEffects.boostersOn = boosterIsOn;
+        rb.AddForce(thrust * transform.up);
+    }
 
     private void Update()
     {
+        // In place of a coroutine, I'm just gonna have this janky update and bool timer thing running
+        BoostersAreOn();
 
-        //// Check if the thruster is on 
-        //var emitter = booster.emission;
-        //if (thrust > 0.0f)
-        //{
-        //    emitter.enabled = true;
+        timer += Time.deltaTime;
 
-        //}
-        //else
-        //{
-        //    emitter.enabled = false;
-        //}
+        if (timer > burnTime)
+        {
+            boosterIsOn = false;
+        }
     }
 
 }

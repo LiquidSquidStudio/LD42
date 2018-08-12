@@ -7,8 +7,11 @@ public class test_Rocket : MonoBehaviour {
 	public controls controlScheme = controls.Keyboard;
 
   	Rigidbody2D rb;
+    ParticleSystem booster;
+    test_Planet planet;
+    BoosterEffects boost;
 
-	public float turningTorque = 10.0f;
+    public float turningTorque = 10.0f;
 	public float thrustForce = 10.0f;
 
 	//Keyboard control variables 
@@ -17,25 +20,18 @@ public class test_Rocket : MonoBehaviour {
 
 	//public float fuel;
 
-	ParticleSystem booster;
-
-	test_Planet planet;
-
 	void Awake() 
 	{
         rb = GetComponent<Rigidbody2D>();
-        // Get a reference to the rocket booster
-        booster = GetComponentInChildren<ParticleSystem>();
-
-		// Start Off
-		var emitter = booster.emission;
-		emitter.enabled = false;
+        boost = GetComponent<BoosterEffects>();
 	}
 
 	// Update is called once per frame
 	void Update () 
 	{
-		if (controlScheme == controls.Keyboard)
+        // Controls schema for independant rocket control
+        #region
+        if (controlScheme == controls.Keyboard)
 		{
 			// Keyboard Control Scheme
 			turning = Input.GetAxis ("Horizontal") * -turningTorque;
@@ -77,29 +73,21 @@ public class test_Rocket : MonoBehaviour {
 
 				// Apply the thrust
 				thrust = (180.0f - Mathf.Abs (angle)) / (180.0f) * thrustForce;
+
+                boost.boostersOn = true;
 			}
 			else
 			{
+                boost.boostersOn = false;
 				thrust = 0.0f;
 			}
-				
 		}
-			
-		// Check if the thruster is on 
-		var emitter = booster.emission;
-		if (thrust > 0.0f)
-		{
-			emitter.enabled = true;
-		} else
-		{
-			emitter.enabled = false;
-		}
-	}
+        #endregion
+    }
 
-	// Update the physics
-	void FixedUpdate()
+    // Update the physics
+    void FixedUpdate()
 	{
-        // Apply the current drag factor -- why?
         //rb.velocity -= rb.velocity * dragFactor * Time.deltaTime;
 
 		// Apply Torques
@@ -111,5 +99,4 @@ public class test_Rocket : MonoBehaviour {
 	{
         // TO DO - Trigger end condition or maybe just trigger losing a life or something
 	}
-
 }
