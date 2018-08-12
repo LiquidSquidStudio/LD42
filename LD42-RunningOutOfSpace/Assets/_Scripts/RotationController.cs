@@ -6,23 +6,19 @@ public class RotationController : MonoBehaviour {
     public float rotationMultiplier;
     public bool isRandom = true;
 
-    private float RandRotSpeed()
-    {
-        if (isRandom)
-        {
-            rotationSpeed = Random.value * rotationMultiplier;
-        }
-        else
-        {
-            rotationSpeed = 1 * rotationMultiplier;
-        }
-
-        return rotationSpeed;
-    }
-
     private void Start()
     {
         RandRotSpeed();
+    }
+
+    private float RandRotSpeed()
+    {
+        if (isRandom)
+            rotationSpeed = Random.value * rotationMultiplier;
+        else
+            rotationSpeed = 1 * rotationMultiplier;
+
+        return rotationSpeed;
     }
 
     private void Update()

@@ -12,6 +12,9 @@ public class SatelliteController : MonoBehaviour {
     public float initialForce = 1000.0f;
     public float mass = 1.0f;
 
+    Vector2 rocketVelocity;
+    public float nudgeVelocity;
+
     public GameObject explosion;
 
     // Sort references
@@ -37,11 +40,22 @@ public class SatelliteController : MonoBehaviour {
             // Start the crash procedure
             StartCoroutine(Crash());
         }
+        if (other.gameObject.tag == "Rocket" || other.gameObject.tag == "Junk")
+        {
+            other.attachedRigidbody.velocity = rocketVelocity;
+            Nudge(rocketVelocity);
+        }
 
-        if (other.gameObject.tag == "Satellite")
+        if (gameObject.tag == "Satellite" && other.gameObject.tag == "Satellite")
         {
             Explode();
         }
+    }
+
+    void Nudge(Vector2 passedOnVelocity)
+    {
+        Vector2 dir = passedOnVelocity.normalized;
+        rb.velocity = passedOnVelocity + dir * nudgeVelocity;
     }
 
     // If it's too close bring it in and crash

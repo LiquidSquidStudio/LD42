@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LaunchPad : MonoBehaviour {
 
@@ -15,16 +16,22 @@ public class LaunchPad : MonoBehaviour {
 
     GameObject currentRocket;
 
+
 	// Use this for initialization
 	void Start ()
     {
-        SpawnRocket();		
-	}
+        SpawnRocket();
+    }
 	
     void SpawnRocket()
     {
         currentRocket = Instantiate(rocketPrefab, transform);
         isLaunchable = true;
+
+        // Added in an Event listener here to tell when we need another rocket because the old one is destroyed
+        var needANewRocket = currentRocket.GetComponent<SelfDestruct>().rocketDestroyed;
+        needANewRocket.RemoveListener(SpawnRocket);
+        needANewRocket.AddListener(SpawnRocket);
     }
 
     //void PointRocket()
