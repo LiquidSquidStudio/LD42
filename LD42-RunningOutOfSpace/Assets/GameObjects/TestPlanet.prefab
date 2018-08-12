@@ -30,6 +30,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1528615414337050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4106139656206374}
+  - component: {fileID: 114258686938521028}
+  m_Layer: 0
+  m_Name: LaunchPad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4106139656206374
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528615414337050}
+  m_LocalRotation: {x: -0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 1.16, y: -0, z: 0}
+  m_LocalScale: {x: 0.3333335, y: 0.3333335, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4457883012185666}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!4 &4457883012185666
 Transform:
   m_ObjectHideFlags: 1
@@ -38,8 +67,9 @@ Transform:
   m_GameObject: {fileID: 1136063888950822}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_Children:
+  - {fileID: 4106139656206374}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -57,7 +87,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 1
 --- !u!114 &114044580573353554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,6 +101,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationMultiplier: -10
   isRandom: 0
+--- !u!114 &114258686938521028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528615414337050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99e900cf5bf45b24da97eb6a1068c2e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocketPrefab: {fileID: 1612172014619344, guid: ca91053364dcd394da16df2f7d1a6793,
+    type: 2}
+  launchVelocity: 5
+  launchAngle: 5
 --- !u!114 &114368678055711492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -82,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfe4cdebd181184aaf1de917f66412a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 6
+  gravity: 1
 --- !u!212 &212310775166009700
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -117,13 +162,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c639585babc169d4a91ba0f63207dadb, type: 3}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 21300000, guid: 4efcf966f3ae2f844b3ba9595feb35d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.24, y: 10.24}
+  m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

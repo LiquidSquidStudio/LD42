@@ -31,7 +31,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1737744272801646
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,8 +68,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1612172014619344}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.16, y: -7.7, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.05009, y: -15.971097, z: 0.08203924}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 4558505173034060}
@@ -146,7 +146,7 @@ MonoBehaviour:
   controlScheme: 1
   turningTorque: 1
   thrustForce: 1
-  fuel: 0
+  thrust: 0
 --- !u!114 &114954422738892822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4784,7 +4784,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 58250a48b68977641a67e024b95d56ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
