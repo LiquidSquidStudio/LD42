@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        string nextScene = (SceneManager.GetActiveScene().buildIndex + 1).ToString();
+        int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
         sceneFader.FadeTo(nextScene);
     }
 
