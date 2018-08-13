@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using System;
+using System.Collections;
 
 public class LaunchPad : MonoBehaviour {
 
@@ -14,10 +17,17 @@ public class LaunchPad : MonoBehaviour {
     GameObject currentRocket;
     public DetachSatellite satControl;
 
-	// Use this for initialization
-	void Awake ()
+    public Image LaunchIcon;
+    public Image SatelliteIcon;
+
+    // Use this for initialization
+    void Awake ()
     {
         SpawnRocket();
+        if (LaunchIcon == null || SatelliteIcon == null)
+        {
+            throw new NullReferenceException("Need to wire up Launch icon and satellite icon to the script 'LaunchPad' instance bro.");
+        }
     }
 
     void SpawnRocket()
@@ -26,6 +36,7 @@ public class LaunchPad : MonoBehaviour {
         isLaunchable = true;
 
         satControl = currentRocket.GetComponent<DetachSatellite>();
+        satControl.SatelliteIcon = SatelliteIcon;
         satControl.enabled = false;
     }
 
@@ -45,7 +56,12 @@ public class LaunchPad : MonoBehaviour {
         rocketControls.LaunchRocket(burnTime);
         isLaunchable = false;
         satControl.enabled = true;
+
+        // move icon
+        StartCoroutine(MoveIconUpAndDown(LaunchIcon));
     }
+
+    
 
     // Update is called once per frame
     void Update ()
@@ -69,5 +85,19 @@ public class LaunchPad : MonoBehaviour {
 
         //    Vector2 desiredDir = aimPosition - (Vector2)transform.position;
         //}
+    }
+
+    private IEnumerator MoveIconUpAndDown(Image icon)
+    {
+        // move up
+        var originalPos = icon.transform.localPosition;
+        var newPos = originalPos + new Vector3(0.0f, 50.0f, 0.0f);
+
+        icon.transform.localPosition = newPos;
+
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        icon.transform.localPosition = originalPos;
+
     }
 }
