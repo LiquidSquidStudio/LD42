@@ -35,8 +35,8 @@ public class DetachSatellite : MonoBehaviour {
         foreach(GameObject part in rocketParts)
         {
             GameObject rPart = Instantiate(part, this.transform);
-            Rigidbody2D rbPart = rPart.GetComponent<Rigidbody2D>();
-            rbPart.velocity += (new Vector2(Random.Range(-forceBump, forceBump), Random.Range(-forceBump, forceBump)));
+            //Rigidbody2D rbPart = rPart.GetComponent<Rigidbody2D>();
+            //rbPart.velocity += (new Vector2(Random.Range(-forceBump, forceBump), Random.Range(-forceBump, forceBump)));
         }
 
         rocket.enabled = false;
@@ -60,7 +60,6 @@ public class DetachSatellite : MonoBehaviour {
         if (runTimer)
         {
             timer += Time.deltaTime;
-            Debug.Log(timer);
         }
     }
 
