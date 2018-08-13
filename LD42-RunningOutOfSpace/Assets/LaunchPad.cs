@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using System;
+using System.Collections;
 
 public class LaunchPad : MonoBehaviour {
 
@@ -14,10 +17,16 @@ public class LaunchPad : MonoBehaviour {
     GameObject currentRocket;
     public DetachSatellite satControl;
 
+    public Image LaunchIcon;
+
 	// Use this for initialization
 	void Awake ()
     {
         SpawnRocket();
+        if (LaunchIcon == null)
+        {
+            throw new NullReferenceException("Need to wire up Launch icon and satellite icon to the script 'LaunchPad' instance bro.");
+        }
     }
 
     void SpawnRocket()
@@ -45,6 +54,23 @@ public class LaunchPad : MonoBehaviour {
         rocketControls.LaunchRocket(burnTime);
         isLaunchable = false;
         satControl.enabled = true;
+
+        // move icon
+        StartCoroutine(MoveIconUpAndDown(LaunchIcon));
+    }
+
+    private IEnumerator MoveIconUpAndDown(Image icon)
+    {
+        // move up
+        var originalPos = icon.transform.localPosition;
+        var newPos = originalPos + new Vector3(0.0f, 100.0f, 0.0f);
+
+        icon.transform.localPosition = newPos;
+
+        yield return new WaitForSecondsRealtime(1.0f);
+
+        icon.transform.localPosition = originalPos;
+
     }
 
     // Update is called once per frame

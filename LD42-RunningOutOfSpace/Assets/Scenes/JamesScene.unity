@@ -1259,7 +1259,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1136063888950822, guid: 6dc5430d28f05ca498b33d82e55d989b, type: 2}
       propertyPath: m_Name
-      value: testPlanet
+      value: THEPLANET
       objectReference: {fileID: 0}
     - target: {fileID: 4106139656206374, guid: 6dc5430d28f05ca498b33d82e55d989b, type: 2}
       propertyPath: m_LocalScale.x
@@ -1269,6 +1269,11 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114814340784904454, guid: 6dc5430d28f05ca498b33d82e55d989b,
+        type: 2}
+      propertyPath: LaunchIcon
+      value: 
+      objectReference: {fileID: 1041717620}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dc5430d28f05ca498b33d82e55d989b, type: 2}
   m_IsPrefabAsset: 0
