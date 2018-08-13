@@ -8,7 +8,9 @@ public class test_Rocket : MonoBehaviour {
 	public enum controls {Keyboard, Mouse};
 	public controls controlScheme = controls.Keyboard;
 
-  
+  	// Specific resrouces
+	public AudioClip boosters;
+	AudioSource source;
 
 	Rigidbody2D rb;
 
@@ -44,7 +46,13 @@ public class test_Rocket : MonoBehaviour {
 		// Start Off
 		var emitter = booster.emission;
 		emitter.enabled = false;
-		
+
+		// Get a reference to the source
+		source = GetComponent<AudioSource>();
+		if (boosters != null)
+		{
+			source.clip = boosters;
+		}
 	}
 
 	// Update is called once per frame
@@ -113,17 +121,25 @@ public class test_Rocket : MonoBehaviour {
 			
 
 		// Check if the thruster is on 
+
+		// Start animation and the sound
 		var emitter = booster.emission;
 		if (thrust > 0.0f)
 		{
-			emitter.enabled = true;
-        
+			if (!emitter.enabled)
+			{
+				emitter.enabled = true;
+				source.Play ();
+			}
 		} else
 		{
-			emitter.enabled = false;
+			if (emitter.enabled)
+			{
+				emitter.enabled = false;
+				source.Stop ();
+			}
 		}
 			
-		
 	}
 
 

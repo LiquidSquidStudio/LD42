@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 4dd010d8f1151b14a8a2a22b3b620f02
+=======
+guid: fb4abaea1fc9df64ba97254a64d315fa
+>>>>>>> lab/start-menu
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -75,7 +79,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< HEAD
     spriteID: 099da752ad206294fa15558ca471f32a
+=======
+    spriteID: db3b3dacb60416849aaf1591655c571a
+>>>>>>> lab/start-menu
     vertices: []
     indices: 
     edges: []

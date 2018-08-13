@@ -14,6 +14,7 @@ public class test_Satalite : MonoBehaviour {
 	float timer = 0.0f;
 	public GameObject explosion;
 
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -113,7 +114,7 @@ public class test_Satalite : MonoBehaviour {
 				
 		// Destroy this 
 		Destroy (this.gameObject);
-
+	
 	}
 		
 }
