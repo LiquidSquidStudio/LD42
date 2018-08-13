@@ -1274,6 +1274,11 @@ Prefab:
       propertyPath: LaunchIcon
       value: 
       objectReference: {fileID: 1041717620}
+    - target: {fileID: 114814340784904454, guid: 6dc5430d28f05ca498b33d82e55d989b,
+        type: 2}
+      propertyPath: SatelliteIcon
+      value: 
+      objectReference: {fileID: 780072504}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dc5430d28f05ca498b33d82e55d989b, type: 2}
   m_IsPrefabAsset: 0

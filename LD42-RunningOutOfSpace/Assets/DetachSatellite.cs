@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class DetachSatellite : MonoBehaviour {
 
@@ -18,6 +22,8 @@ public class DetachSatellite : MonoBehaviour {
 
     bool runTimer;
     float timer;
+
+    public Image SatelliteIcon;
 
     private void Awake()
     {
@@ -53,6 +59,11 @@ public class DetachSatellite : MonoBehaviour {
 
         satC = sat.GetComponent<Collider2D>();
         satC.enabled = false;
+
+        if (SatelliteIcon != null)
+        {
+            StartCoroutine(MoveIconUpAndDown(SatelliteIcon));
+        }
     }
 
     private void Update()
@@ -81,5 +92,19 @@ public class DetachSatellite : MonoBehaviour {
             satC.enabled = true;
             runTimer = false;
         }
+    }
+
+    private IEnumerator MoveIconUpAndDown(Image icon)
+    {
+        // move up
+        var originalPos = icon.transform.localPosition;
+        var newPos = originalPos + new Vector3(0.0f, 50.0f, 0.0f);
+
+        icon.transform.localPosition = newPos;
+
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        icon.transform.localPosition = originalPos;
+
     }
 }
