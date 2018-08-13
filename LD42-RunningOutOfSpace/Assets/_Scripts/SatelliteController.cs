@@ -42,7 +42,7 @@ public class SatelliteController : MonoBehaviour {
         }
         if (other.gameObject.tag == "Rocket" || other.gameObject.tag == "Junk")
         {
-            other.attachedRigidbody.velocity = rocketVelocity;
+            rocketVelocity = other.attachedRigidbody.velocity;
             Nudge(rocketVelocity);
         }
 

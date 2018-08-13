@@ -4,7 +4,7 @@ public class SelfDestruct : MonoBehaviour {
 
     SpriteRenderer rocketSprite;
 
-    public int childCount;
+    int childCount;
 
     private void Awake()
     {
@@ -20,7 +20,7 @@ public class SelfDestruct : MonoBehaviour {
 
     void CheckIfDestroyed()
     {
-        if (!rocketSprite.enabled && childCount < 3)
+        if (!rocketSprite.enabled && childCount < 2)
             Destroy(this.gameObject);
     }
 }
