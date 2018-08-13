@@ -3,10 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public SceneFader sceneFader;
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        string nextScene = (SceneManager.GetActiveScene().buildIndex + 1).ToString();
+        sceneFader.FadeTo(nextScene);
     }
 
     public void QuitGame()
